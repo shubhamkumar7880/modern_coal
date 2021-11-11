@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  font-family: "lato", sans-serif;
+  background-color: #f8f8ff;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+#tax {
+  text-align: center;
+}
+#navbar,
+tr,
+td {
+  border: 1px solid black;
+  padding: 4px;
+}
+#navbar2,
+tr,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+#inputbox {
+  width: 150px;
+  font-weight: bold;
+  font-size: large;
+}
+#date {
+  font-weight: bold;
+  font-size: 20px;
+}
+.date_el {
+  position: absolute;
+  top: 390px;
+  right: 20px;
+}
+#name {
+  width: 300px;
+  height: 25px;
+}
+#d_add {
+  margin-top: 10px;
+}
+#address {
+  width: 420px;
+  height: 50px;
+  font-size: 17px;
+}
+#deliveryaddress {
+  width: 100%;
+  height: 25px;
+}
+#number {
+  width: 420px;
+  height: 25px;
+  margin: 10px;
+  font-weight: bold;
+}
+#total,
+#vofgoods,
+#cgst,
+#igst,
+#sgst,
+#amount,
+#input,
+#rate,
+#hsn,
+#gst,
+#number {
+  font-weight: bold;
+  font-size: large;
+}
+#cess_parent {
+  font-weight: bold;
+  font-size: large;
+}
+#gst {
+  width: 350px;
+  height: 25px;
+  font-weight: bold;
+}
+
+#hsn {
+  width: 100px;
+  margin-bottom: 10px;
+}
+#hsn2,
+#hsn_code {
+  width: 100px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+#btn,
+#minus {
+  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 2px;
+  border: rgb(189, 183, 183) 1px solid;
+  padding: 1px 5px;
+}
+#vof {
+  text-align: center;
+  width: 200px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-size: large;
+}
+#part {
+  height: 70px;
+  width: 400px;
+  font-weight: 900;
+  font-size: larger;
+}
+#partAd {
+  height: 65px;
+  width: 400px;
+  font-weight: 900;
+  font-size: larger;
+}
+#del {
+  font-size: larger;
+  font-weight: 900;
+}
+.submit {
+  text-align: center;
+}
+#submit {
+  background-color: white;
+  font-size: large;
+  padding: 3px;
+  font-weight: 600;
+  border: rgb(140, 145, 145) 2px solid;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+#submit:hover {
+  background-color: #e7e7e7;
+}
+table {
+  width: 100%;
+}
+textarea {
+  width: 98.5%;
+  height: 100%;
+  font-size: 20pt;
+}
+#invo {
+  width: 120px;
+  font-weight: 600;
+  font-size: 20px;
+}
+#quantity,
+#cess {
+  width: 200px;
+  margin-bottom: 18px;
+}
+#rate {
+  width: 200px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+#right {
+  text-align: right;
+}
+#right_El {
+  text-align: right;
+  margin-top: 25px;
+}
+#input {
+  width: 96%;
+  font-weight: bold;
+  text-align: center;
+}
+#sel {
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+}
+.goods {
+  margin-bottom: 21px;
+  text-align: center;
+}
+#leftalign {
+  float: right;
+}
+.sign {
+  float: right;
+}
+#truck {
+  font-weight: bold;
+  font-size: 20px;
+}
+#eway {
+  font-weight: bold;
+  font-size: 20px;
+}
+#authorisedsignature {
+  /* float: right; */
+  width: 250px;
+  height: 50px;
+  position: relative;
+  font-size: 20pt;
+}
+
+#grossvalue {
+  width: 100%;
+  height: 30px;
+}
+
+#mine {
+  display: flex;
+  padding: 13px;
+}
+.name {
+  display: flex;
+  padding-bottom: 51px;
+}
+#name {
+  margin: 25px 10px 10px 10px;
+}
+/* #address {
+  margin: 0;
+} */
+.address {
+  margin: 0;
+}
+.address h2 {
+  margin: 0;
+}
+.image {
+  border-radius: 10px;
+  position: absolute;
+}
+#pdf-gen {
+  margin: 20px;
+}
+.bank {
+  margin-top: 50px;
+  border: solid 1px black;
+  border-radius: 10px;
+  width: 260px;
+  padding: 15px;
+}

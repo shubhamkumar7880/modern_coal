@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="table.css" />
+
+    <title>MODERN COAL CARBONISATION ENTERPRISE</title>
+  </head>
+
+  <body>
+    
+      <img src="mcce.jpeg" class="image" />
+      <div id="tax">
+        <h3><u>TAX INVOICE</u></h3>
+        <h2>CASH / CREDIT MEMO</h2>
+        <h1>MODERN COAL CARBONISATION ENTERPRISE</h1>
+        <h2>LOW ASH METALLURGICAL COKE MANUFACTURER</h2>
+        <h2>At Khudandih, P.O. Kankomath, Katras,Dhanbad(Jharkhand) 828113</h2>
+      </div>
+      <form method="POST" name="google-sheet">
+      <div class="container">
+        <div id="navbar">
+          <table style="width: 100%">
+            <tr>
+              <td><h4>GSTIN:20AACFM7663D1ZN</h4></td>
+              <td><h4>PAN:AACFM7663D</h4></td>
+              <td><h4>State - JHARKHAND</h4></td>
+              <td><h4>Code - 20</h4></td>
+              <td><h4>S.S.I No:03/04/00294 / 200121200940 Part-II</h4></td>
+            </tr>
+            <table style="width: 100%">
+              <tr>
+                <td>
+                  <h4>
+                    INVOICE NO : MCCE:-
+                   <span id='invoice' name='Invoice'></span><span id="btn">+</span><span id="minus">-</span>
+                  </h4>
+
+                  <td id="mine"><h3 id='mining'>Mining Reference No.:- J020416209</h3>
+                    <div class="date_el">
+                    <input type="date" id="date" name="Date"/>
+                  </div>
+                </td>
+                 
+                </td>
+              </tr>
+            </table>
+          </table>
+        </div>
+        <div id="navbar2">
+          <table style="width: 100%">
+            <td id="upper">GSTIN : <input type="text" id="number" name="GST2"/></td>
+            <td><h3>State Code:-<span id="state"></span></h3></td>
+            <tr>
+              <td class="name">
+                <h2>M/S :</h2>
+                <h3 id="name"><textarea name="Party-Name" id="part" cols="20" rows="20"></textarea></h3>
+              </td>
+              <td class="address">
+                <h2>Address :</h2>
+                <h3 id="address"><textarea id="partAd" cols="20" rows="20"></textarea></h3>
+              </td>
+            </tr>
+            <tr>
+              <td id="lower">
+               
+                GSTIN : <input type="text" id="gst" name='GST1'/>
+              </td>
+              <td>
+              <h3>Delivery Address : <div id="d_add"><textarea name="Delivery-address" id="del" cols="5" rows="5"></textarea></div></h3>
+            </td>
+            </tr>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th>HSN Code</th>
+                <th>Description Of Goods</th>
+                <th>Quantity(in M.T)</th>
+                <th>Rate(Per M.T)</th>
+                <th>Values of Goods(₹)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr valign="top">
+                <td id='hsn_code'>
+                  <input type="number" id="hsn" name='HSN'/>
+                  <input type="number" id="hsn2" />
+                </td>
+                <td>
+                  <div id="desc">
+                  <textarea name="Description" id="" cols="30" rows="10"></textarea>
+                </div>
+                  <h3>E-way bill No.</h3>
+                  <input type="number" id="eway" name="Bill-No"/>
+                  <h3>Truck No.</h3>
+                  <input type="text" id="truck" name="Truck-No"/>
+                </td>
+                <td id="quantity">
+                  <input type="text" id="input" name='Quantity'/>
+                  <h3 id="right">Less Discount.</h3>
+                  <h3 id="right">Total Amount.</h3>
+                  <h3 id="right">SGST @2.5%</h3>
+                  <h3 id="right">CGST @2.5%</h3>
+                  <h3 id="right">IGST @ 5%</h3>
+                  <h3 id="right">Cess.</h3>
+                  <h3 id="right">Other Charges.</h3>
+                  <h3 id="right_El">Gross Total(₹).</h3>
+                </td>
+                <td id="quantity">
+                  <input type="text" id="rate" name="Rate"/>
+                  <!-- <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" />
+                <input type="number" id="quantity" /> -->
+                </td>
+                <td id="quantity">
+                  <div id="vofgoods">
+                    <input type="number" id="quantity" />
+                  </div>
+                  <input type="number" id="quantity" />
+                  <div id="amount">
+                    <input type="number" id="quantity" />
+                  </div>
+                  <div id="sgst">
+                    <input type="number" id="quantity" />
+                  </div>
+
+                  <div id="cgst">
+                    <input type="number" id="quantity" />
+                  </div>
+                  <div id="igst">
+                    <input type="number" id="quantity" />
+                  </div>
+                  <div id='cess_parent'>
+                  <input type="number" id="quantity" />
+                </div>
+                  <input type="number" id="quantity" />
+                  <div id="total">
+                    <input type="number" id="quantity" />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="submit">
+        <input type="submit" value="Submit" name="submit" id="submit"/>
+      </div>
+      </form>
+        <h2>Total (₹) in words : <span id="words"></span></h2>
+       
+      </div>
+      <div id="leftalign">
+        <center><h2>E.&.O.E</h2></center>
+        <h2>For MODERN COAL CARBONISATION ENTERPRISE</h2>
+        <div class="sign">
+        <textarea name="" id="authorisedsignature"></textarea>
+        <h2>Authorised Signature</h2>
+      </div>
+      </div>
+     
+      <div class="bank">
+        <h3><u>BANK DETAILS</u></h3>
+        <h4>BANK NAME:- KARNATAKA BANK</h4>
+        <h4>A/C No:- 1997000600006701</h4>
+        <h4>IFSC CODE:- KARB0000199</h4>
+        <h4>BRANCH:- DHANBAD</h4>
+      </div>
+      <h2>
+        Note:Our responsibilities ceases as soon as the Truck leaves our
+        factory
+      </h2>
+      
+        <u
+          ><h2>
+            *All Disputes against this Invoice are Subject to Dhanbad
+            Jurisdiction
+          </h2></u>
+    
+  </body>
+  <!-- <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz92LWDF3MpESX2qunPaVGspigo1ehCS5Z4-o-15yUgcW3QwCRFoTQ2ULc-be38co5gWQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Your data is saved in Google Spread Sheet!"))
+        .catch(error => console.error('Error!', error.message))
+        document.getElementById('submit').style.display='none';
+    })
+  </script> -->
+  <script src="table.js"></script>
+</html>
