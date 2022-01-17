@@ -38,6 +38,11 @@ td {
   top: 390px;
   right: 20px;
 }
+#dec {
+  width: 1040px;
+  height: 30px;
+  font-weight: bold;
+}
 #name {
   width: 300px;
   height: 25px;
@@ -73,6 +78,11 @@ td {
 #number {
   font-weight: bold;
   font-size: large;
+}
+#oc {
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
 }
 #cess_parent {
   font-weight: bold;
@@ -128,6 +138,12 @@ td {
   font-size: larger;
   font-weight: 900;
 }
+#ad_del {
+  font-size: 18px;
+  font-weight: 900;
+  width: 500px;
+  height: 65px;
+}
 .submit {
   text-align: center;
 }
@@ -158,9 +174,15 @@ textarea {
   font-size: 20px;
 }
 #quantity,
+#quant,
 #cess {
   width: 200px;
   margin-bottom: 18px;
+}
+#quantity,
+#oc,
+#vof {
+  border: solid black 2px;
 }
 #rate {
   width: 200px;
@@ -170,6 +192,10 @@ textarea {
 }
 #right {
   text-align: right;
+}
+#oc {
+  width: 200px;
+  margin-bottom: 18px;
 }
 #right_El {
   text-align: right;
@@ -249,4 +275,11 @@ textarea {
   border-radius: 10px;
   width: 260px;
   padding: 15px;
+}
+
+.last {
+  display: flex;
+}
+#words {
+  margin-left: 5px;
 }

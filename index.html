@@ -34,7 +34,7 @@
               <tr>
                 <td>
                   <h4>
-                    INVOICE NO : MCCE:-
+                    INVOICE NO : MCCE/
                    <span id='invoice' name='Invoice'></span><span id="btn">+</span><span id="minus">-</span>
                   </h4>
 
@@ -98,7 +98,7 @@
                   <h3>Truck No.</h3>
                   <input type="text" id="truck" name="Truck-No"/>
                 </td>
-                <td id="quantity">
+                <td id="quant">
                   <input type="text" id="input" name='Quantity'/>
                   <h3 id="right">Less Discount.</h3>
                   <h3 id="right">Total Amount.</h3>
@@ -109,7 +109,7 @@
                   <h3 id="right">Other Charges.</h3>
                   <h3 id="right_El">Gross Total(₹).</h3>
                 </td>
-                <td id="quantity">
+                <td id="quant">
                   <input type="text" id="rate" name="Rate"/>
                   <!-- <input type="number" id="quantity" />
                 <input type="number" id="quantity" />
@@ -120,7 +120,7 @@
                 <input type="number" id="quantity" />
                 <input type="number" id="quantity" /> -->
                 </td>
-                <td id="quantity">
+                <td id="quant">
                   <div id="vofgoods">
                     <input type="number" id="quantity" />
                   </div>
@@ -141,7 +141,9 @@
                   <div id='cess_parent'>
                   <input type="number" id="quantity" />
                 </div>
-                  <input type="number" id="quantity" />
+                <div id='ot'>
+                  <input type="number" id="oc" />
+                </div>
                   <div id="total">
                     <input type="number" id="quantity" />
                   </div>
@@ -154,7 +156,7 @@
         <input type="submit" value="Submit" name="submit" id="submit"/>
       </div>
       </form>
-        <h2>Total (₹) in words : <span id="words"></span></h2>
+        <div class="last"><h2>Total (₹) in words :</h2> <h2 id="words"></h2></div>
        
       </div>
       <div id="leftalign">

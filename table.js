@@ -22,6 +22,7 @@ const desc = document.getElementById("desc");
 const state_El = document.getElementById("state");
 const truck_El = document.getElementById("truck");
 const Eway = document.getElementById("eway");
+const other_El = document.getElementById("oc");
 
 let d = new Date();
 let n = +d.getFullYear();
@@ -67,9 +68,17 @@ let rt = 0;
 input.addEventListener("input", (e) => {
   put = +e.target.value;
 });
-
+let total;
+other_El.addEventListener("input", (e) => {
+  const other_charge = +e.target.value;
+  total = total + other_charge;
+  console.log(total);
+  const tot = total.toFixed(2);
+  total_El.innerHTML = `<input type="text" id="vof" value=${tot} name='Total' />`;
+  const dec = withDecimal(tot);
+  words.innerHTML = `<textarea name="Delivery-address" id="dec" cols="5" rows="5">${dec}</textarea>`;
+});
 rate.addEventListener("input", (e) => {
-  let total;
   rt = +e.target.value;
 
   const vof = put * rt;
@@ -86,7 +95,8 @@ rate.addEventListener("input", (e) => {
     const tot = total.toFixed(2);
 
     total_El.innerHTML = `<input type="text" id="vof" value=${tot} name='Total' />`;
-    words.innerHTML = inWords(total.toFixed(0));
+    const dec = withDecimal(tot);
+    words.innerHTML = `<textarea name="Delivery-address" id="dec" cols="5" rows="5">${dec}</textarea>`;
   } else {
     const sgs = sgst.toFixed(2);
     sgst_El.innerHTML = `<input type="text" id="vof" value=${sgs} name='SGST' />`;
@@ -98,86 +108,129 @@ rate.addEventListener("input", (e) => {
 
     const tot = total.toFixed(2);
     total_El.innerHTML = `<input type="text" id="vof" value=${tot} name='Total' />`;
-    words.innerHTML = inWords(total.toFixed(0));
+    const dec = withDecimal(tot);
+    words.innerHTML = `<textarea name="Delivery-address" id="dec" cols="5" rows="5">${dec}</textarea>`;
   }
   if (hsn === 27011990) {
-    const cess = put * 400;
+    let val = sel.value;
+    let cess;
+    if (val === "Tailings") {
+      cess = 0;
+    } else {
+      cess = put * 400;
 
-    const ces = cess.toFixed(2);
-    cess_El.innerHTML = `<input type="text" id="vof" value=${ces} name='CESS' />`;
-    total = put * rt + 2 * sgst + cess;
+      const ces = cess.toFixed(2);
+      cess_El.innerHTML = `<input type="text" id="vof" value=${ces} name='CESS' />`;
+      total = put * rt + 2 * sgst + cess;
 
-    const tot = total.toFixed(2);
-    total_El.innerHTML = `<input type="text" id="vof" value=${tot} name='Total' />`;
-    words.innerHTML = inWords(total.toFixed(0));
+      const tot = total.toFixed(2);
+      total_El.innerHTML = `<input type="text" id="vof" value=${tot} name='Total' />`;
+      const dec = withDecimal(tot);
+      words.innerHTML = `<textarea name="Delivery-address" id="dec" cols="5" rows="5">${dec}</textarea>`;
+    }
   }
 });
 
-var a = [
-  "",
-  "one ",
-  "two ",
-  "three ",
-  "four ",
-  "five ",
-  "six ",
-  "seven ",
-  "eight ",
-  "nine ",
-  "ten ",
-  "eleven ",
-  "twelve ",
-  "thirteen ",
-  "fourteen ",
-  "fifteen ",
-  "sixteen ",
-  "seventeen ",
-  "eighteen ",
-  "nineteen ",
-];
-var b = [
-  "",
-  "",
-  "twenty",
-  "thirty",
-  "forty",
-  "fifty",
-  "sixty",
-  "seventy",
-  "eighty",
-  "ninety",
-];
+function convertNumberToWords(amount) {
+  var words = new Array();
+  words[0] = "";
+  words[1] = "One";
+  words[2] = "Two";
+  words[3] = "Three";
+  words[4] = "Four";
+  words[5] = "Five";
+  words[6] = "Six";
+  words[7] = "Seven";
+  words[8] = "Eight";
+  words[9] = "Nine";
+  words[10] = "Ten";
+  words[11] = "Eleven";
+  words[12] = "Twelve";
+  words[13] = "Thirteen";
+  words[14] = "Fourteen";
+  words[15] = "Fifteen";
+  words[16] = "Sixteen";
+  words[17] = "Seventeen";
+  words[18] = "Eighteen";
+  words[19] = "Nineteen";
+  words[20] = "Twenty";
+  words[30] = "Thirty";
+  words[40] = "Forty";
+  words[50] = "Fifty";
+  words[60] = "Sixty";
+  words[70] = "Seventy";
+  words[80] = "Eighty";
+  words[90] = "Ninety";
+  amount = amount.toString();
+  var atemp = amount.split(".");
+  var number = atemp[0].split(",").join("");
+  var n_length = number.length;
+  var words_string = "";
+  if (n_length <= 9) {
+    var n_array = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+    var received_n_array = new Array();
+    for (var i = 0; i < n_length; i++) {
+      received_n_array[i] = number.substr(i, 1);
+    }
+    for (var i = 9 - n_length, j = 0; i < 9; i++, j++) {
+      n_array[i] = received_n_array[j];
+    }
+    for (var i = 0, j = 1; i < 9; i++, j++) {
+      if (i == 0 || i == 2 || i == 4 || i == 7) {
+        if (n_array[i] == 1) {
+          n_array[j] = 10 + parseInt(n_array[j]);
+          n_array[i] = 0;
+        }
+      }
+    }
+    value = "";
+    for (var i = 0; i < 9; i++) {
+      if (i == 0 || i == 2 || i == 4 || i == 7) {
+        value = n_array[i] * 10;
+      } else {
+        value = n_array[i];
+      }
+      if (value != 0) {
+        words_string += words[value] + " ";
+      }
+      if (
+        (i == 1 && value != 0) ||
+        (i == 0 && value != 0 && n_array[i + 1] == 0)
+      ) {
+        words_string += "Crores ";
+      }
+      if (
+        (i == 3 && value != 0) ||
+        (i == 2 && value != 0 && n_array[i + 1] == 0)
+      ) {
+        words_string += "Lakhs ";
+      }
+      if (
+        (i == 5 && value != 0) ||
+        (i == 4 && value != 0 && n_array[i + 1] == 0)
+      ) {
+        words_string += "Thousand ";
+      }
+      if (i == 6 && value != 0 && n_array[i + 1] != 0 && n_array[i + 2] != 0) {
+        words_string += "Hundred and ";
+      } else if (i == 6 && value != 0) {
+        words_string += "Hundred ";
+      }
+    }
+    words_string = words_string.split("  ").join(" ");
+  }
+  return words_string;
+}
 
-function inWords(num) {
-  if ((num = num.toString()).length > 9) return "overflow";
-  n = ("000000000" + num)
-    .substr(-9)
-    .match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-  if (!n) return;
-  var str = "";
-  str +=
-    n[1] != 0
-      ? (a[Number(n[1])] || b[n[1][0]] + " " + a[n[1][1]]) + "crore "
-      : "";
-  str +=
-    n[2] != 0
-      ? (a[Number(n[2])] || b[n[2][0]] + " " + a[n[2][1]]) + "lakh "
-      : "";
-  str +=
-    n[3] != 0
-      ? (a[Number(n[3])] || b[n[3][0]] + " " + a[n[3][1]]) + "thousand "
-      : "";
-  str +=
-    n[4] != 0
-      ? (a[Number(n[4])] || b[n[4][0]] + " " + a[n[4][1]]) + "hundred "
-      : "";
-  str +=
-    n[5] != 0
-      ? (str != "" ? "and " : "") +
-        (a[Number(n[5])] || b[n[5][0]] + " " + a[n[5][1]]) +
-        "only "
-      : "";
-  return str;
+function withDecimal(n) {
+  var nums = n.toString().split(".");
+  var whole = convertNumberToWords(nums[0]);
+  if (nums.length == 2) {
+    var fraction = convertNumberToWords(nums[1]);
+    return whole + "and " + fraction + "paise only.";
+  } else {
+    return whole;
+  }
 }
 
 let number;
@@ -217,8 +270,10 @@ hsn_El.addEventListener("input", (e) => {
   </select>`;
   }
   const sel = document.getElementById("sel");
+
   sel.addEventListener("change", () => {
-    const val = sel.value;
+    let val = sel.value;
+
     if (val === "Others") {
       desc.innerHTML = `<textarea name="Description" id="" cols="30" rows="10"></textarea>`;
     }
@@ -227,7 +282,7 @@ hsn_El.addEventListener("input", (e) => {
 
 async function getd_add(num) {
   const res = await fetch(
-    `https://sheet.gstincheck.co.in/check/3f05e1a4433d7febea909920fba293ce/${num}`
+    `https://sheet.gstincheck.co.in/check/046af4e9a536deed966f4a68f62cab3b/${num}`
   );
   const data = await res.json();
 
@@ -238,12 +293,12 @@ async function getd_add(num) {
 
 async function getGST(num) {
   const res = await fetch(
-    `https://sheet.gstincheck.co.in/check/3f05e1a4433d7febea909920fba293ce/${num}`
+    `https://sheet.gstincheck.co.in/check/046af4e9a536deed966f4a68f62cab3b/${num}`
   );
 
   const data = await res.json();
   // console.log(data);
-  address_El.innerHTML = data.data.pradr.adr;
+  address_El.innerHTML = `<textarea name="address_EL" id="ad_del" cols="5" rows="5">${data.data.pradr.adr}</textarea>`;
 
   const party = data.data.tradeNam;
 
